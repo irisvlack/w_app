@@ -1,26 +1,37 @@
 body {
-    background: #8C52FF;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
+    --background-color: #8C52FF;
+    --text-color: #fff;
+    --container-background: rgba(255, 255, 255, 0.3);
+    --box-shadow-color: rgba(0, 0, 0, 0.1);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --input-border-color: white;
+    --button-background: #debff4;
+    --button-hover-background: #8b48d7;
+}
+
+.light-mode {
+    background: var(--background-color);
+    color: var(--text-color);
+}
+
+.dark-mode {
+    background: #121212; /* Dark background color */
+    color: #ffffff; /* White text color */
 }
 
 #weather-container {
-    background: rgba(255, 255, 255, 0.3);
+    background: var(--container-background);
     max-width: 400px;
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px var(--box-shadow-color);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
     text-align: center;
 }
 
 h2, label, p {
-    color: #fff;
+    color: var(--text-color);
     margin: 8px 0;
 }
 
@@ -29,12 +40,12 @@ input {
     padding: 8px;
     box-sizing: border-box;
     border-radius: 10px;
-    border: 1px solid white;
+    border: 1px solid var(--input-border-color);
     margin-top: 20px;
 }
 
 button {
-    background: #debff4;
+    background: var(--button-background);
     color: white;
     padding: 10px;
     border: none;
@@ -46,7 +57,7 @@ button {
 }
 
 button:hover {
-    background: #8b48d7;
+    background: var(--button-hover-background);
 }
 
 #temp-div p {
@@ -81,7 +92,7 @@ button:hover {
     flex-direction: column;
     align-items: center;
     margin-right: 10px;
-    color: white;
+    color: var(--text-color);
 }
 
 .hourly-item img {
@@ -91,6 +102,6 @@ button:hover {
 }
 
 #hourly-heading {
-    color: #fff;
+    color: var(--text-color);
     margin-top: 10px;
 }

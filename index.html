@@ -6,7 +6,8 @@
     <title>Weather App</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="light-mode">
+    <button id="toggle-button">Toggle Dark Mode</button>
     <div id="weather-container">
         <h2>Weather App</h2>
         <input type="text" id="city" placeholder="Enter City">
@@ -21,5 +22,35 @@
         <div id="hourly-forecast"></div>
     </div>
     <script src="script.js"></script>
+    <script>
+        // Add dark mode functionality directly in the HTML file
+        function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle('dark-mode');
+            
+            // Store the user's preference in localStorage
+            const isDarkMode = body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDarkMode);
+        }
+
+        // Function to set the initial mode based on user preference in localStorage
+        function setInitialMode() {
+            const body = document.body;
+            const storedMode = localStorage.getItem('darkMode');
+            
+            if (storedMode === 'true') {
+                body.classList.add('dark-mode');
+            } else {
+                body.classList.remove('dark-mode');
+            }
+        }
+
+        // Add event listener to the toggle button
+        const toggleButton = document.getElementById('toggle-button');
+        toggleButton.addEventListener('click', toggleDarkMode);
+
+        // Call setInitialMode to set the initial mode when the page loads
+        setInitialMode();
+    </script>
 </body>
 </html>
