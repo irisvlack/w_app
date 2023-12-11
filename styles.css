@@ -7,6 +7,11 @@ body {
     --input-border-color: white;
     --button-background: #debff4;
     --button-hover-background: #8b48d7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
 }
 
 .light-mode {
